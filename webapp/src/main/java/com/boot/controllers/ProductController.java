@@ -15,6 +15,13 @@ public class ProductController {
 	
 	@Autowired
      private ProductService productService;
+	
+		//GET sur /login
+	 	@RequestMapping(value="/login", method=RequestMethod.GET)
+	    public String login(){
+	        return "login";
+	    }
+	
      
 		//GET sur /products
      	@RequestMapping(value="/products", method=RequestMethod.GET)
@@ -45,7 +52,7 @@ public class ProductController {
         }
 
         //POST sur "product"
-     	@RequestMapping(value="/product", method=RequestMethod.GET)
+     	@RequestMapping(value="/product", method=RequestMethod.POST)
         public String saveProduct(Product product){
         	productService.saveProduct(product);
             return "redirect:/product/show/" + product.getId();
