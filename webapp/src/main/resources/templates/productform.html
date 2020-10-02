@@ -19,7 +19,7 @@
         </div>
     </form>
 
-    <div>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
         <form class="form-horizontal" th:object="${product}" th:action="@{/product}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <input type="hidden" th:field="*{version}"/>
@@ -52,7 +52,15 @@
             </div>
         </form>
     </div>
+    
+    <div>
+    	<center>
+    		<h2>Vous devez etre administrateur</h2>
+   		</center>
+    </div>
 </div>
+
+	
 
 </body>
 </html>
