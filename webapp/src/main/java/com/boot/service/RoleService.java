@@ -1,5 +1,7 @@
 package com.boot.service;
 
-public interface RoleService extends CRUDService {
+import com.boot.entities.Role;
+
+public interface RoleService extends CRUDService<Role> {
 
 }
